@@ -24,7 +24,11 @@ Route::prefix('v1')->group(function () {
     Route::post('register', [UserController::class, 'register']);
     Route::post('login', [UserController::class, 'login']);
 
-    Route::resource('document-management', DocumentManagementController::class);
+    Route::get('document-management', [DocumentManagementController::class, 'index']);
+    Route::post('document-management', [DocumentManagementController::class, 'store']);
+    Route::get('document-management/{id}', [DocumentManagementController::class, 'show']);
+    Route::put('document-management', [DocumentManagementController::class, 'update']);
+    Route::delete('document-management', [DocumentManagementController::class, 'destroy']);
     Route::put('update-profile/{id}', [UserController::class, 'update']);
     Route::middleware(['auth:sanctum'])->group(function () {
     });
