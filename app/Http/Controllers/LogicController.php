@@ -39,10 +39,14 @@ class LogicController extends Controller
         $finalSet = array_unique($finalSet);
 
         // Cetak hasil
+        $arrPush = [];
         foreach ($result as $item => $substrings) {
-            echo "$item = {" . implode(", ", $substrings) . "}\n";
+            $hasil = "$item = {" . implode(", ", $substrings) . "}";
+            array_push($arrPush, $hasil);
         }
 
-        echo "S = {" . implode(", ", $finalSet) . "}\n";
+        $finalHasil = "S = {" . implode(", ", $finalSet) . "}";
+        array_push($arrPush, $finalHasil);
+        return $arrPush;
     }
 }
