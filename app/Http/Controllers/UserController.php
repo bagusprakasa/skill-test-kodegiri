@@ -62,7 +62,7 @@ class UserController extends Controller
             } else {
                 $profile = Profile::where('user_id', $user->id)->first();
                 if ($request->profile_image) {
-                    File::delete($profile->signing);
+                    File::delete($profile->profile_image);
                 }
             }
             $profile->division = $request->division;
@@ -76,7 +76,6 @@ class UserController extends Controller
             $profile->save();
 
             DB::commit();
-            // return redirect()->route('register')->with('success', 'Successfully registered please check your email for activation account');
             return redirect()->back()->with('success', 'Successfully updated your account');
         } catch (\Exception $e) {
             DB::rollback();
