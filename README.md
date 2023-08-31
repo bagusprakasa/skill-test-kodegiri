@@ -7,7 +7,11 @@ Instalasi
 -   Clone atau download repo ini
 -   Jalankan perintah `composer install` dan `npm install`
 -   Copy file `.env-example` lalu rename menjadi `.env`
--   Jalankan perintah `php artisan serve`
+-   Ubah konfigurasi database pada file `.env`
+-   Ubah konfigurasi #MAIL CONFIG pada file `.env`
+-   Jalankan perintah `php artisan migrate`
+-   Jalankan perintah `php artisan storage:link`
+-   Yang terakhir alankan perintah `php artisan serve` agar website dapat diakses secara lokal
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
